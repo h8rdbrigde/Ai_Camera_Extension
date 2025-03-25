@@ -1,13 +1,25 @@
 {
     "name": "AI Camera",
     "description": "Extension for working with AI Camera on Micro:bit",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "license": "MIT",
     "dependencies": {},
     "files": [
         "camera_ai.py",
-        "definition.js"
+        "definition.js",
+        "toolbox.xml",
+        "main.ts"
     ],
     "testFiles": [],
-    "public": true
+    "public": true,
+    "targetVersions": "*",
+    "supportedTargets": [
+        "microbit"
+    ],
+    "blockDependencies": {},
+    "extension": {
+        "category": "AI CAMERA",
+        "color": "#0b5394",
+        "blocks": "toolbox.xml"
+    }
 }
