@@ -13,7 +13,6 @@ namespace AICamera {
 
     //% block="Kiểm tra kết quả AI" weight=70
     export function checkResult(): string {
-        return serial.readUntil("
-");
+        return serial.readUntil("\n");
     }
 }
