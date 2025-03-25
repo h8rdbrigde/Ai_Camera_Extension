@@ -11,8 +11,23 @@ namespace AICamera {
         serial.writeString("update");
     }
 
-    //% block="Kiểm tra kết quả AI" weight=70
-    export function checkResult(): string {
-        return serial.readUntil("\n");
+    //% block="Kiểm tra kết quả AI nhận dạng nhãn %label với độ tin cậy >= %confidence" weight=70
+    export function checkRecognition(label: string, confidence: number): boolean {
+        let result = serial.readUntil(serial.delimiters(Delimiters.NewLine));
+        let confidenceValue = parseFloat(result.split(",")[1]);
+        let labelDetected = result.split(",")[0];
+        return labelDetected == label && confidenceValue >= confidence;
+    }
+
+    //% block="Đọc nhãn nhận dạng" weight=60
+    export function readRecognition(): string {
+        let result = serial.readUntil(serial.delimiters(Delimiters.NewLine));
+        return result.split(",")[0];
+    }
+
+    //% block="Đọc độ tin cậy của kết quả nhận dạng" weight=50
+    export function readConfidence(): number {
+        let result = serial.readUntil(serial.delimiters(Delimiters.NewLine));
+        return parseFloat(result.split(",")[1]);
     }
 }
