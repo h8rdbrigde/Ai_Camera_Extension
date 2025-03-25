@@ -1,0 +1,13 @@
+{
+    "name": "AI Camera",
+    "description": "Extension for working with AI Camera on Micro:bit",
+    "version": "0.0.1",
+    "license": "MIT",
+    "dependencies": {},
+    "files": [
+        "camera_ai.py",
+        "definition.js"
+    ],
+    "testFiles": [],
+    "public": true
+}
